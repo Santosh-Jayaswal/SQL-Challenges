@@ -5,24 +5,25 @@ Condition:
     3) For brands do not have pairs in the same year: keep those rows as well
     
 Input Table
-************************************************************************************
+***********************************************************************************************************************
 |brand_1|	|brand_2|	|year|	|custom_1|	|custom_2|	|custom_3|	|custom_4|
-apple		samsung		2020		1			2			1			2
-samsung		apple		2020		1			2			1			2
-apple		samsung		2021		1			2			5			3
-samsung		apple		2021		5			3			1			2
-google					2020		5			9		
-oneplus		nothing		2020		5			9			6			3
-************************************************************************************
+apple		samsung		2020		1		2			1			2
+samsung		apple		2020		1		2			1			2
+apple		samsung		2021		1		2			5			3
+samsung		apple		2021		5		3			1			2
+google				2020		5		9		
+oneplus		nothing		2020		5		9			6			3
+***********************************************************************************************************************
 
 Output Table:
-************************************************************************************
+***********************************************************************************************************************
 |brand_1|	|brand_2|	|year|	|custom_1|	|custom_2|	|custom_3|	|custom_4|
-apple		samsung		2020		1			2			1			2
-apple		samsung		2021		1			2			5			3
-samsung		apple		2021		5			3			1			2
-google					2020		5			9		
-oneplus		nothing		2020		5			9			6			3
+apple		samsung		2020		1		2			1			2
+apple		samsung		2021		1		2			5			3
+samsung		apple		2021		5		3			1			2
+google				2020		5		9		
+oneplus		nothing		2020		5		9			6			3
+***********************************************************************************************************************
 */
 
 -- CREATE TABLE brand_pairs (
@@ -42,6 +43,11 @@ oneplus		nothing		2020		5			9			6			3
 -- 			("samsung", "apple", 2021, 5, 3, 1, 2),
 -- 			("google", NULL, 2020, 5, 9, NULL, NULL),
 -- 			("oneplus", "nothing", 2020, 5, 9, 6, 3);
+
+
+
+
+
 
 WITH CTE AS (
 			SELECT
